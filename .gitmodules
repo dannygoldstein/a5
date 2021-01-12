@@ -7,3 +7,6 @@
 [submodule "swarp"]
 	path = swarp
 	url = ./swarp
+[submodule "hotpants"]
+	path = hotpants
+	url = ./hotpants/
