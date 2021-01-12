@@ -1,12 +1,12 @@
 [submodule "scamp"]
-	path = scamp
+	path = submodules/scamp
 	url = ./scamp
 [submodule "sextractor"]
-	path = sextractor
+	path = submodules/sextractor
 	url = ./sextractor/
 [submodule "swarp"]
-	path = swarp
+	path = submodules/swarp
 	url = ./swarp
 [submodule "hotpants"]
-	path = hotpants
+	path = submodules/hotpants
 	url = ./hotpants/
