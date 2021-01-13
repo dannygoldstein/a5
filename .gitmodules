@@ -1,12 +1,12 @@
 [submodule "scamp"]
 	path = submodules/scamp
-	url = ./scamp
+	url = git@github.com:astromatic/scamp.git
 [submodule "sextractor"]
 	path = submodules/sextractor
-	url = ./sextractor/
+	url = git@github.com:astromatic/sextractor.git	
 [submodule "swarp"]
 	path = submodules/swarp
-	url = ./swarp
+	url = git@github.com:astromatic/swarp.git		
 [submodule "hotpants"]
 	path = submodules/hotpants
-	url = ./hotpants/
+	url = git@github.com:acbecker/hotpants.git
