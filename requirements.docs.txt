@@ -1,0 +1,4 @@
+sphinx==3.4.3
+recommonmark
+numpydoc
+python-docs-theme
