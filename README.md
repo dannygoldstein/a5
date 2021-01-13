@@ -1,2 +1,3 @@
-# sky processing unit
-Astronomical Image Reduction, Detrending, Calibration, and Subtraction Pipeline
+# A5
+
+[[doc/_static/images/ccd.png]]
