@@ -1,0 +1,55 @@
+name: Build and deploy documentation
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build-and-deploy-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    if: github.repository_owner == 'ls4-software'
+    steps:
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/sphinx
+            ~/.ccache
+            ~/.local
+            ~/.npm
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+      - name: Build docs
+        run: |
+          make docs
+          touch doc/_build/html/.nojekyll
+      - name: Install SSH Client 🔑
+        if: github.ref == 'refs/heads/master'
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.CI_DEPLOY_KEY }}
+
+      - name: Deploy docs
+        if: github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          FOLDER: doc/_build/html
+          REPOSITORY_NAME: ls4-software/docs
+          BRANCH: gh-pages
+          SSH: true
