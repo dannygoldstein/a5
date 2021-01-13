@@ -17,8 +17,9 @@ $(info $())
 doc_reqs:
 	pip install -q -r requirements.docs.txt
 
+requirements:
+	pip install -q -r requirements.txt
 
 docs: ## Build the docs
-docs: | doc_reqs 
+docs: | doc_reqs
 	export SPHINXOPTS=-W; make -C doc html
-
