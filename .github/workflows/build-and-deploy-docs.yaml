@@ -50,6 +50,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           FOLDER: doc/_build/html
-          REPOSITORY_NAME: ls4-software/docs
+          REPOSITORY_NAME: ls4-software/a5-docs
           BRANCH: gh-pages
           SSH: true
